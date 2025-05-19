@@ -1,0 +1,115 @@
+.background {
+	position: fixed;
+	inset: 0;
+	background: linear-gradient(45deg, #ff6ec4, #7873f5, #4adede, #fbeff7);
+	background-size: 400% 400%;
+	animation: gradientShift 20s ease infinite;
+	z-index: -2;
+}
+
+@keyframes gradientShift {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+.acrylic {
+	position: relative;
+	background: rgba(255, 255, 255, 0.25);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+	border-radius: 12px;
+	padding: 1rem;
+	box-sizing: border-box;
+	overflow: hidden;
+	z-index: 0;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	transition: all 0.3s ease;
+}
+
+.acrylic::before {
+	content: "";
+	position: absolute;
+	top: -2px; right: -2px; bottom: -2px; left: -2px;
+	background: inherit;
+	backdrop-filter: blur(16px);
+	border-radius: inherit;
+	z-index: -1;
+}
+
+.acrylic::after {
+	content: "";
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.2) 0%,
+		rgba(255, 255, 255, 0.05) 50%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	border-radius: inherit;
+	z-index: -1;
+}
+
+.acrylic:hover {
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+}
+
+.acrylic {
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.layout {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.acrylic--large {
+	grid-column: 1 / -1;
+}
+
+html * {
+	font-family: sans-serif !important;
+}
+
+.title {
+	font-size: 3.5rem;
+	margin: 0;
+	color: rgba(0, 0, 0, 0.8);
+	letter-spacing: 2px;
+	font-weight: 700;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+	font-size: 1.5rem;
+	margin: 0.5rem 0 0;
+	color: rgba(0, 0, 0, 0.6);
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+.image-container {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	margin: 1rem 0;
+}
+
+.side-image {
+	max-width: 48%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s ease;
+}
+
+.side-image:hover {
+	transform: scale(1.02);
+}

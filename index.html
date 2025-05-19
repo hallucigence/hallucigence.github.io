@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hallucigence</title>
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+		<canvas class="background" id="effect"></canvas>
+		<div class="layout">
+			<div class="acrylic acrylic--large">
+				<h1 class="title">Hallucigence</h1>
+				<p class="subtitle">Towards Synthetic Cognition and Beyond</p>
+			</div>
+			<div class="acrylic acrylic--large">
+				<h2>An Overview</h2>
+				<p>Hallucigence, a name based on the word <i>hallucinate</i> and <i>intelligence</i>, is an ambitious project aimed at the creation of an AGI (Artificial General Intelligence) engine by modeling the relevant mechanisms found in the common biological brain as a SNN (Spiking Neural Network).</p>
+				<p>The engine is written fully in the C programming language, and is deeply optimized from the ground up. It runs as both a server and a client, and supports acceleration through multithreading. It additionally (but optionally) supports GPU acceleration for NVIDIA GPUs through CUDA.</p>
+			</div>
+			<div class="acrylic acrylic--large">
+				<h2>The Roadmap</h2>
+				<p>So far, the most vital elements have been implemented, them being the core SNN architecture itself, the learning mechanism, as well as the server and client components. We also implement several platform-specific abstraction layer modules, allowing our neural network to easily be deployed on almost any system, and incorporate (as mentioned above) several key optimizations to improve performance, decrease electricity consumption, and reduce memory usage.</p>
+				<p>The server is capable of stepping thousands of neurons and millions of synapses in real-time (given a beefy computer), and has a time resolution of around one millisecond—meaning that the neural network is stepped through approximately 1,000 times per second, when not underperforming, thanks to the time synchronization mechanism.</p>
+				<p>Because we run as a server-client model, we can easily track the time accuracy of the server's neural network steppings, we can track the parameters of any neuron(s), and can also graph the neuron's activity over time.</p>
+				<div class="image-container">
+					<img src="image0.png" alt="The client graphing a neuron's membrane potential." class="side-image">
+					<img src="image1.png" alt="The CPU's usage while running the server at 28 threads." class="side-image">
+				</div>
+			</div>
+			<div class="acrylic acrylic--large">
+				<h2>The Challenge</h2>
+				<p>In our current setup, the server runs exactly 1,024 neurons and 1,047,552 synapses, all in real-time. However, this comes at a cost—the server tends to almost fully utilize the 20 processor cores that are allocated to it. In order to end up modeling something as large as the common biological brain (which is our mission), we'd have to increase the number of neurons and synapses by a very large factor.</p>
+				<p>Because the neural network scales up linearly, scaling up the amount of processor cores would be extremely expensive, in terms of both hardware costs and electricity consumption costs—but there's good news; with the rise of semiconductors specifically designed for accelerating these exact types of neural networks, we can efficiently scale up our SNN, making it not just substantially faster, but also significantly more energy-efficient.</p>
+				<p>However, there's a catch—these neuromorphic platforms are sealed away from the public, and can only be obtained by prestigious organizations. We are currently a project maintained by a single individual, and therefore need assistance getting our hands on these platforms. We believe that neuromorphic technology is the future, and we hope to be able to help advance this field by pushing it's limits.</p>
+			</div>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>
