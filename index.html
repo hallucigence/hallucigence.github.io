@@ -21,7 +21,7 @@
 				<h2>The Roadmap</h2>
 				<p>So far, the most vital elements have been implemented, them being the core SNN architecture itself, the learning mechanism, as well as the server and client components. We also implement several platform-specific abstraction layer modules, allowing our neural network to easily be deployed on almost any system, and incorporate (as mentioned above) several key optimizations to improve performance, decrease electricity consumption, and reduce memory usage.</p>
 				<p>The server is capable of stepping thousands of neurons and millions of synapses in real-time (given a beefy computer), and has a time resolution of around one millisecond—meaning that the neural network is stepped through approximately 1,000 times per second, when not underperforming, thanks to the time synchronization mechanism.</p>
-				<p>Because we run as a server-client model, we can easily track the time accuracy of the server's neural network steppings, we can track the parameters of any neuron(s), and can also graph the neuron's activity over time.</p>
+				<p>Because we run as a server-client model, we can easily track the time accuracy of the server's neural network steppings, we can track the parameters of any neuron(s), and can also graph the neuron's activity over time, all while being separated as different program runtimes.</p>
 				<div class="image-container">
 					<img src="image0.png" alt="The client graphing a neuron's membrane potential." class="side-image">
 					<img src="image1.png" alt="The CPU's usage while running the server at 28 threads." class="side-image">
